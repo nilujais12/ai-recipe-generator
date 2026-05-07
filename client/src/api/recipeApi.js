@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const BASE_URL = 'https://ai-recipe-generator-backend-t1gc.onrender.com/api/recipes';
+const BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000/api/recipes';
 export const generateRecipe = (ingredients, cuisine) =>
   axios.post(`${BASE_URL}/generate`, { ingredients, cuisine });
 
